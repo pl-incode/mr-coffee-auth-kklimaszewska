@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="/static/layout.css" />
+</head>
+<body>
+    <footer>
+        <img class="footer-img" src="/static/full_logo_white.png" alt="logo"/>
+        <h1 class="footer-title">Schedule website</h1>
+        <div class="footer-left">
+            <p>{{firstname}}</br>{{lastname}}</p>
+            <button class="footer-button" onclick="window.location.href='/logout'">LogOut</button>
+        </div>
+    </footer>
+    <div class="title">   
+        <h2>New schedule</h2>
+        <div class="alert {{&messageClass}}" role="alert">
+                {{message}}
+        </div>
+        <div>
+            <form method="POST" enctype="application/x-www-form-urlencoded">
+                <label><span>for {{firstname}} {{lastname}}</span></label>
+                <input type="hidden" name="user_id" required value={{idNumber}}>
+                <label>day</label>
+                <select name="day" required>
+                    <option value=1>monday</option>
+                    <option value=2>tuesday</option>
+                    <option value=3>wendsday</option>
+                    <option value=4>thursday</option>
+                    <option value=5>friday</option>
+                    <option value=6>saturday</option>
+                    <option value=7>sunday</option>
+                </select>
+                <label>start at (working hours 8-20)</label>
+                <input type="number" min='8' max='20' step='1' name="start_at" id="start" required>
+                <label>end at (working hours 8-20)</label>
+                <input type="number" min='8' max='20'  step='1' name="end_at"  id="end" required>
+                <button type="submit">Submit</button>
+            </form>
+            <script>
+                function setMin() {
+                    const start = document.getElementById("start");
+                    const end = document.getElementById("end");
+                    end.min = parseInt(start.value) + 1;
+                }
+
+                const trigger = document.getElementById("start");
+                trigger.addEventListener("change", setMin, false);
+            </script>
+        </div>
+        <h3>List of Your schedules</h3>
+            <div class="columns">      
+            {{#schedules}}
+                <div class="column">
+                    <p><span>day:</span> {{day}},</p>
+                    <p><span>start at:</span> {{start_at}},</p>
+                    <p><span>end at:</span> {{end_at}}.</p>
+                </div>
+            {{/schedules}}
+            {{^schedules}}
+            <div class="column">
+                <p>You do not have schedules yet.</br>Please add a schedule.</p>
+            </div>
+            {{/schedules}}
+            </div>
+    </div>   
+</body>
+</html>

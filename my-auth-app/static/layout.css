@@ -1,0 +1,135 @@
+ body {
+            background: #f5f7fa;
+            font-family: Verdana;
+            margin: 0;
+            padding: 0;
+        }
+footer {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #708090;
+        }
+
+.footer-title {
+            color: #fff;
+        }
+
+.footer-img {
+            position: absolute;
+            left: 0;
+            height: 50px;
+            padding: 10px;
+        }
+
+.footer-left {
+            position: absolute;
+            right: 0;
+            padding: 10px;
+            width: 20%;
+            font-size: 10px;
+            color: #fff;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+}
+
+.footer-button {
+            display: block;
+            width: 80px;
+            height: 40px;
+            background: #ff6b08;
+            font-size: 20px;
+        }
+
+.title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+.container {
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 100px;
+            padding: 20px;
+        }
+
+.error-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 100px;
+            padding: 20px;
+}
+
+button {
+            margin: 20px;
+            display: block;
+            width: 30%;
+            height: 40px;
+            background: #708090;
+            color:#fff;
+            font-size: 20px;
+        }
+
+span {
+            font-weight: bold;
+        }
+        
+.columns {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+.column {
+            border-style: dashed;
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+        }
+
+.column-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.column-link:hover {
+    color: #ff6b08;
+}
+
+form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: left;
+        }
+
+label,
+input,
+select {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+.alert-error {
+    color: #ff6b08;
+}
+
+.alert-success {
+    color: #4BB543;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="/static/layout.css" />
+</head>
+<body>
+    <footer>
+        <img class="footer-img" src="/static/full_logo_white.png" alt="logo"/>
+        <h1 class="footer-title">Schedule website</h1>
+        <div class="footer-left">
+            <button class="footer-button" onclick="window.location.href='/register'">SignUp</button>
+        </div>
+    </footer>
+    <div class="title">   
+        <h2>Logged in to access our schedule webpage.</h2>
+        <div class="alert {{&messageClass}}" role="alert">
+                {{message}}
+        </div>
+        <div>
+            <form action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+                <label>email</label>
+                <input type="email" name="email" required>
+                <label>password</label>
+                <input type="password" name="password" required>
+                <button type="submit">LogIn</button>
+            </form>
+        </div>
+    </div>   
+</body>
+</html>

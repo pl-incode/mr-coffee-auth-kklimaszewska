@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="/static/layout.css" />
+</head>
+<body>
+    <footer>
+        <img class="footer-img" src="/static/full_logo_white.png" alt="logo"/>
+        <h1 class="footer-title">Schedule website</h1>
+        <div class="footer-left">
+            <p>{{firstname}}</br>{{lastname}}</p>
+            <button class="footer-button" onclick="window.location.href='/logout'">LogOut</button>
+        </div>
+    </footer>
+    <div class="title">   
+        <h2>Welcome {{firstname}} {{lastname}} to our schedule webpage</h2>
+        <div>
+            <h3>List of all schedules</h3>
+            <div class="columns">      
+            {{#schedules}}
+                <div class="column">
+                    <p><a class="column-link" href="/user{{&user_id}}">{{firstname}}</br>{{lastname}}</a></p>
+                    <p><span>day:</span> {{day}},</p>
+                    <p><span>start at:</span> {{start_at}},</p>
+                    <p><span>end at:</span> {{end_at}}.</p>
+                </div>
+            {{/schedules}}
+            {{^schedules}}
+            <div class="column">
+                <p>There are no schedules in the database at the moment.</br>Please add a schedule.</p>
+            </div>
+            {{/schedules}}
+            </div>
+        </div>
+    </div> 
+    <div class="container">
+        <button onclick="window.location.href='/new-schedule'">Add new schedule</button>
+    </div>  
+</body>
+</html>
